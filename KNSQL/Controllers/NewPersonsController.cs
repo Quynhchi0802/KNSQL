@@ -13,11 +13,16 @@ namespace KNSQL.Controllers
     public class NewPersonsController : Controller
     {
         private LapTrinhQuanLyDBContext db = new LapTrinhQuanLyDBContext();
+        AutoGenerateKey aukey = new AutoGenerateKey();
 
         // GET: NewPersons
         public ActionResult Index()
         {
-            return View(db.Persons.ToList());
+            //lay gia tri ban ghi cuoi cung trong doi tuong person
+            var perID = db.Persons.OrderByDescending(m => m.PersonID).FirstOrDefault().PersonID;
+            var newID = aukey.GenerateKey(perID);
+            ViewBag.newPerID = newID;
+            return View(db.NewPersons.ToList());
         }
 
         // GET: NewPersons/Details/5
