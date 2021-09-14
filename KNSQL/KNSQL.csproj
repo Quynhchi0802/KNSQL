@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewPersonsController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -146,9 +147,14 @@
     <Compile Include="Migrations\202109131508172_create_table_person.Designer.cs">
       <DependentUpon>202109131508172_create_table_person.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109140626586_create_table.cs" />
+    <Compile Include="Migrations\202109140626586_create_table.Designer.cs">
+      <DependentUpon>202109140626586_create_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBContext.cs" />
+    <Compile Include="Models\NewPerson.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,6 +202,11 @@
     <Content Include="Views\Person\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\NewPersons\Create.cshtml" />
+    <Content Include="Views\NewPersons\Delete.cshtml" />
+    <Content Include="Views\NewPersons\Details.cshtml" />
+    <Content Include="Views\NewPersons\Edit.cshtml" />
+    <Content Include="Views\NewPersons\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109131508172_create_table_person.resx">
       <DependentUpon>202109131508172_create_table_person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109140626586_create_table.resx">
+      <DependentUpon>202109140626586_create_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
