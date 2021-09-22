@@ -13,7 +13,7 @@ namespace KNSQL.Controllers
     public class NewPersonsController : Controller
     {
         private LapTrinhQuanLyDBContext db = new LapTrinhQuanLyDBContext();
-        AutoGenerateKey aukey = new AutoGenerateKey();
+        StringProcess aukey = new StringProcess();
 
         // GET: NewPersons
         public ActionResult Index()

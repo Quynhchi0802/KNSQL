@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewPersonsController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\StdNewController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -153,7 +154,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\AutoGenerateKey.cs" />
+    <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBContext.cs" />
     <Compile Include="Models\NewPerson.cs" />
     <Compile Include="Models\Person.cs" />
@@ -208,6 +209,8 @@
     <Content Include="Views\NewPersons\Details.cshtml" />
     <Content Include="Views\NewPersons\Edit.cshtml" />
     <Content Include="Views\NewPersons\Index.cshtml" />
+    <Content Include="Views\StdNew\Index.cshtml" />
+    <Content Include="Views\StdNew\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
