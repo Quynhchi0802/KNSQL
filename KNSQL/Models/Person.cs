@@ -9,6 +9,7 @@ namespace KNSQL.Models
 {
     public class Person
     {
+        public static object ChooseImage { get; internal set; }
         [Key]
         public string PersonID { get; set; }
         [AllowHtml]
