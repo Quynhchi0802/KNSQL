@@ -12,6 +12,7 @@ namespace KNSQL.Controllers
         {
             return View();
         }
+        [Authorize]
 
         public ActionResult About()
         {

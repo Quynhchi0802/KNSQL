@@ -1,19 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+
 namespace KNSQL.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    [Table("Account")]
-    public partial class Account
-    {
+	public class Account
+	{
         [Key]
-        [StringLength(50)]
-        public string Uesname { get; set; }
-
-        [StringLength(50)]
-        public string password { get; set; }
+        [Required(ErrorMessage ="Username is a required")]
+        public string Username { get; set; }
+        [Required(ErrorMessage = "Password is a required")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }

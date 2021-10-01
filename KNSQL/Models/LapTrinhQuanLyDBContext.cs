@@ -23,11 +23,11 @@ namespace KNSQL.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>()
-                .Property(e => e.Uesname)
+                .Property(e => e.Username)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Account>()
-                .Property(e => e.password)
+                .Property(e => e.Password)
                 .IsUnicode(false);
         }
     }
