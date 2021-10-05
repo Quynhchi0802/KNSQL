@@ -10,120 +10,107 @@ using KNSQL.Models;
 
 namespace KNSQL.Controllers
 {
-    public class ckeditorController : Controller
+    public class RolesController : Controller
     {
         private LapTrinhQuanLyDBContext db = new LapTrinhQuanLyDBContext();
-       
 
-        // GET: ckeditor
+        // GET: Roles
         public ActionResult Index()
         {
-            return View(db.Persons.ToList());
+            return View(db.Roles.ToList());
         }
 
-        // GET: ckeditor/Details/5
+        // GET: Roles/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
-            if (person == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View(role);
         }
 
-        // GET: ckeditor/Create
+        // GET: Roles/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ckeditor/Create
+        // POST: Roles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,PersonName")] Person person)
+        public ActionResult Create([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.Persons.Add(person);
+                db.Roles.Add(role);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-           
-            
 
-            return View(person);
+            return View(role);
         }
 
-        private object DbFunctions()
-        {
-            throw new NotImplementedException();
-        }
-
-        private object DbFunctions(object fileUrl)
-        {
-            throw new NotImplementedException();
-        }
-
-        // GET: ckeditor/Edit/5
+        // GET: Roles/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
-            if (person == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View(role);
         }
 
-        // POST: ckeditor/Edit/5
+        // POST: Roles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,PersonName")] Person person)
+        public ActionResult Edit([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(person).State = EntityState.Modified;
+                db.Entry(role).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(person);
+            return View(role);
         }
 
-        // GET: ckeditor/Delete/5
+        // GET: Roles/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
-            if (person == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View(role);
         }
 
-        // POST: ckeditor/Delete/5
+        // POST: Roles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Person person = db.Persons.Find(id);
-            db.Persons.Remove(person);
+            Role role = db.Roles.Find(id);
+            db.Roles.Remove(role);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

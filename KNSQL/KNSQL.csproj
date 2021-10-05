@@ -133,6 +133,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewPersonsController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StdNewController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -154,14 +155,30 @@
     <Compile Include="Migrations\202109140626586_create_table.Designer.cs">
       <DependentUpon>202109140626586_create_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110051443006_ Migration_table_Accounts.cs" />
+    <Compile Include="Migrations\202110051443006_ Migration_table_Accounts.Designer.cs">
+      <DependentUpon>202110051443006_ Migration_table_Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110051530570_ Migration_table_Role.cs" />
+    <Compile Include="Migrations\202110051530570_ Migration_table_Role.Designer.cs">
+      <DependentUpon>202110051530570_ Migration_table_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110051558503_ Migration_table_Rolee.cs" />
+    <Compile Include="Migrations\202110051558503_ Migration_table_Rolee.Designer.cs">
+      <DependentUpon>202110051558503_ Migration_table_Rolee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Encrytion.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\StringlenghthAttribute.cs" />
+    <Compile Include="Models\StringLenghthAttribute1.cs" />
     <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBContext.cs" />
     <Compile Include="Models\NewPerson.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\UsersRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -575,6 +592,11 @@
     <Content Include="Views\ckeditor\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -605,6 +627,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109140626586_create_table.resx">
       <DependentUpon>202109140626586_create_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110051443006_ Migration_table_Accounts.resx">
+      <DependentUpon>202110051443006_ Migration_table_Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110051530570_ Migration_table_Role.resx">
+      <DependentUpon>202110051530570_ Migration_table_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110051558503_ Migration_table_Rolee.resx">
+      <DependentUpon>202110051558503_ Migration_table_Rolee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

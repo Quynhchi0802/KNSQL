@@ -16,6 +16,8 @@ namespace KNSQL.Models
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
         public virtual DbSet<NewPerson> NewPersons { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+
 
 
 
@@ -27,7 +29,7 @@ namespace KNSQL.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Account>()
-                .Property(e => e.Password)
+                .Property(e => e.password)
                 .IsUnicode(false);
         }
     }
