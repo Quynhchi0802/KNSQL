@@ -128,6 +128,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admins\AdminsAreaRegistration.cs" />
+    <Compile Include="Areas\Admins\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Employees\Controllers\HomeEmpController.cs" />
+    <Compile Include="Areas\Employees\EmployeesAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ckeditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -167,12 +171,14 @@
     <Compile Include="Migrations\202110051558503_ Migration_table_Rolee.Designer.cs">
       <DependentUpon>202110051558503_ Migration_table_Rolee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110071558380_update_tbe.cs" />
+    <Compile Include="Migrations\202110071558380_update_tbe.Designer.cs">
+      <DependentUpon>202110071558380_update_tbe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\StringlenghthAttribute.cs" />
-    <Compile Include="Models\StringLenghthAttribute1.cs" />
     <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBContext.cs" />
     <Compile Include="Models\NewPerson.cs" />
@@ -198,6 +204,10 @@
     <Content Include="Scripts\ckeditor\ckeditor.asp" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="Areas\Employees\Views\web.config" />
+    <Content Include="Areas\Employees\Views\HomeEmp\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\web.config" />
+    <Content Include="Areas\Admins\Views\HomeAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -552,6 +562,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -592,15 +603,18 @@
     <Content Include="Views\ckeditor\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\Roles\Delete.cshtml" />
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Account\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="upload file\" />
+    <Folder Include="Areas\Admins\Data\" />
+    <Folder Include="Areas\Admins\Views\Shared\" />
+    <Folder Include="Areas\Employees\Data\" />
+    <Folder Include="Areas\Employees\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -636,6 +650,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110051558503_ Migration_table_Rolee.resx">
       <DependentUpon>202110051558503_ Migration_table_Rolee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110071558380_update_tbe.resx">
+      <DependentUpon>202110071558380_update_tbe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

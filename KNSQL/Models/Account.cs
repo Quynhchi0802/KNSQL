@@ -15,7 +15,7 @@ namespace KNSQL.Models
         [Required(ErrorMessage = "password is a required")]
         [DataType(DataType.Password)]
         public string password { get; set; }
-        [StringLenghth(10)]
+        [StringLength(10)]
         public string RoleID { get; set; }
 
     }

@@ -24,10 +24,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("ckeditor", "Index", "ckeditor")</li>
-                    <li>@Html.ActionLink("Register", "Index", "Account")</li>
-                    <li>@Html.ActionLink("Login", "Index", "Account")</li>
-                    <li>@Html.ActionLink("Logout", "Index", "Account")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account", new { Area = "" }, null)</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account", new { Area = "" }, null)</li>
                     <li>@Html.ActionLink("Role", "Index", "Roles")</li>
+                    <li>@Html.ActionLink("Admin", "Index", "HomeAdmin", new { Area = "Admins" }, null)</li>
+                    <li>@Html.ActionLink("Employees", "Index", "HomeEmp", new { Area = "Employees" }, null)</li>
 
 
                 </ul>

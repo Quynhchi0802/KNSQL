@@ -12,6 +12,7 @@ namespace KNSQL.Controllers
     {
         Encrytion encry = new Encrytion();
         LapTrinhQuanLyDBContext db = new LapTrinhQuanLyDBContext();
+        StringProcess strPro = new StringProcess();
         // GET: Account
         [HttpGet]
         public ActionResult Register()
@@ -37,43 +38,49 @@ namespace KNSQL.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            
-            
-                if (CheckSession() == 1)
 
-                {
-                    return RedirectToAction("Index", "Home_Ad", new { Areas = "admins" });
 
-                }
-                else if (CheckSession() == 2)
-                {
-                    return RedirectToAction("Index", "Home_Le", new { Areas = "NV" });
-                }
+            if (CheckSession() == 1)
+
+            {
+                return RedirectToAction("Index", "HomeAdmin", new { Area = "Admins" });
+
+            }
+            else if (CheckSession() == 2)
+            {
+                return RedirectToAction("Index", "Employees", new { Area = "NV" });
+            }
             ViewBag.ReturnUrl = returnUrl;
             return View();
-            
-           
-        
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
         [AllowAnonymous]
-        public ActionResult Login(Account acc)
+        [HttpPost]
+        public ActionResult Login(Account acc, string returnUrl)
         {
-            if (ModelState.IsValid)
+            try
             {
-                string encrytionpass = encry.PasswordEncrytion(acc.password);
-                var model = db.Accounts.Where(m => m.Username == acc.Username && m.password == encrytionpass).ToList().Count();
-                //thông tin nhập chính xác 
-                if (model == 1)
+                if (!string.IsNullOrEmpty(acc.Username) && !string.IsNullOrEmpty(acc.password))
                 {
-                    FormsAuthentication.SetAuthCookie(acc.Username, true);
-                    return RedirectToAction("Index", "Home");
+                    using (var db = new LapTrinhQuanLyDBContext())
+                    {
+                        var passToMD5 = strPro.GetMD5(acc.password);
+                        var account = db.Accounts.Where(m => m.Username.Equals(acc.Username) && m.password.Equals(passToMD5)).Count();
+                        if (account == 1)
+                        {
+                            FormsAuthentication.SetAuthCookie(acc.Username, false);
+                            Session["idUser"] = acc.Username;
+                            Session["roleUser"] = acc.RoleID;
+                            return RedirectTolocal(returnUrl);
+                        }
+                        ModelState.AddModelError("", "thông tin đăng nhập chưa chính xác");
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "thông tin đăng nhập k đúng ");
-                }
+                ModelState.AddModelError("", "Username and password is required");
+            }
+            catch
+            {
+                ModelState.AddModelError("", "hệ thống đang được bảo trì , vui lòng liên hệ với quản trị viên");
             }
             return View(acc);
         }
@@ -82,7 +89,7 @@ namespace KNSQL.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         //kiểm tra người dùng đăng nhập với quyền j
         private int CheckSession()
         {
@@ -94,7 +101,7 @@ namespace KNSQL.Controllers
                     var role = db.Accounts.Find(user.ToString()).RoleID;
                     if (role != null)
                     {
-                        if (role.ToString() == "admin")
+                        if (role.ToString() == "Admin")
                         {
                             return 1;
                         }
@@ -107,19 +114,19 @@ namespace KNSQL.Controllers
             }
             return 0;
         }
-        public ActionResult RedirectTolocal( string returnUrl)
+        public ActionResult RedirectTolocal(string returnUrl)
         {
             if (string.IsNullOrEmpty(returnUrl) || returnUrl == "/")
             {
                 if (CheckSession() == 1)
 
                 {
-                    return RedirectToAction("Index", "Home_Ad", new { Areas = "admins" });
+                    return RedirectToAction("Index", "HomeAdmin", new { Area = "Admins" });
 
                 }
                 else if (CheckSession() == 2)
                 {
-                    return RedirectToAction("Index", "Home_Le", new { Areas = "NV" });
+                    return RedirectToAction("Index", "HomeEmp", new { Area = "Employees" });
                 }
 
             }
@@ -129,7 +136,7 @@ namespace KNSQL.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home_Ad");
+                return RedirectToAction("Index", "Home");
             }
         }
 
