@@ -51,7 +51,19 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LinqToExcel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\LinqToExcel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -133,6 +145,7 @@
     <Compile Include="Areas\Employees\Controllers\HomeEmpController.cs" />
     <Compile Include="Areas\Employees\EmployeesAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ckeditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewPersonsController.cs" />
@@ -175,9 +188,15 @@
     <Compile Include="Migrations\202110071558380_update_tbe.Designer.cs">
       <DependentUpon>202110071558380_update_tbe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111190517195_create_table1.cs" />
+    <Compile Include="Migrations\202111190517195_create_table1.Designer.cs">
+      <DependentUpon>202111190517195_create_table1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Encrytion.cs" />
+    <Compile Include="Models\ExcelProcess.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBContext.cs" />
@@ -186,6 +205,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\UsersRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="upload\excel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -615,6 +635,8 @@
     <Folder Include="Areas\Admins\Views\Shared\" />
     <Folder Include="Areas\Employees\Data\" />
     <Folder Include="Areas\Employees\Views\Shared\" />
+    <Folder Include="Views\CopyDataFromExcelFile\" />
+    <Folder Include="Views\Excel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -653,6 +675,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110071558380_update_tbe.resx">
       <DependentUpon>202110071558380_update_tbe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111190517195_create_table1.resx">
+      <DependentUpon>202111190517195_create_table1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
