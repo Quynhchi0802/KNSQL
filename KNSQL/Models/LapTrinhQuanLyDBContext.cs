@@ -18,6 +18,11 @@ namespace KNSQL.Models
         public virtual DbSet<NewPerson> NewPersons { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
+        public virtual DbSet<Nguoi> Nguois { get; set; }
+        public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<LoaiSanPham> LoaiSanPhams { get; set; }
+
 
 
 

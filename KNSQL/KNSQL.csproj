@@ -148,9 +148,11 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ckeditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiSanPhamsController.cs" />
     <Compile Include="Controllers\NewPersonsController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Controllers\StdNewController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -192,16 +194,32 @@
     <Compile Include="Migrations\202111190517195_create_table1.Designer.cs">
       <DependentUpon>202111190517195_create_table1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111230544204_create_table_nguoi.cs" />
+    <Compile Include="Migrations\202111230544204_create_table_nguoi.Designer.cs">
+      <DependentUpon>202111230544204_create_table_nguoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111230546284_create_table_nguoi1.cs" />
+    <Compile Include="Migrations\202111230546284_create_table_nguoi1.Designer.cs">
+      <DependentUpon>202111230546284_create_table_nguoi1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111230557536_create_table_sanpham.cs" />
+    <Compile Include="Migrations\202111230557536_create_table_sanpham.Designer.cs">
+      <DependentUpon>202111230557536_create_table_sanpham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\ExcelProcess.cs" />
+    <Compile Include="Models\LoaiSanPham.cs" />
+    <Compile Include="Models\Nguoi.cs" />
+    <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\StringProcess.cs" />
+    <Compile Include="Models\Process\StringProcess.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBContext.cs" />
     <Compile Include="Models\NewPerson.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\SanPham.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\UsersRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -628,6 +646,16 @@
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Account\Logout.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Create.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Delete.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Details.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Edit.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Index.cshtml" />
+    <Content Include="Views\SanPhams\Create.cshtml" />
+    <Content Include="Views\SanPhams\Delete.cshtml" />
+    <Content Include="Views\SanPhams\Details.cshtml" />
+    <Content Include="Views\SanPhams\Edit.cshtml" />
+    <Content Include="Views\SanPhams\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -635,8 +663,7 @@
     <Folder Include="Areas\Admins\Views\Shared\" />
     <Folder Include="Areas\Employees\Data\" />
     <Folder Include="Areas\Employees\Views\Shared\" />
-    <Folder Include="Views\CopyDataFromExcelFile\" />
-    <Folder Include="Views\Excel\" />
+    <Folder Include="Views\Article\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -678,6 +705,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111190517195_create_table1.resx">
       <DependentUpon>202111190517195_create_table1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111230544204_create_table_nguoi.resx">
+      <DependentUpon>202111230544204_create_table_nguoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111230546284_create_table_nguoi1.resx">
+      <DependentUpon>202111230546284_create_table_nguoi1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111230557536_create_table_sanpham.resx">
+      <DependentUpon>202111230557536_create_table_sanpham.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

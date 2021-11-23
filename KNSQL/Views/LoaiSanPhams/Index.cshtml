@@ -1,0 +1,40 @@
+﻿@model IEnumerable<KNSQL.Models.LoaiSanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiSanPhamID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLoaiSanPham)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoaiSanPhamID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenLoaiSanPham)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.LoaiSanPhamID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.LoaiSanPhamID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.LoaiSanPhamID })
+    </td>
+</tr>
+}
+
+</table>
