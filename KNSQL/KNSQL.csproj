@@ -209,6 +209,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\AutoGeneratekey.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\ExcelProcess.cs" />
     <Compile Include="Models\LoaiSanPham.cs" />
@@ -664,6 +665,7 @@
     <Folder Include="Areas\Employees\Data\" />
     <Folder Include="Areas\Employees\Views\Shared\" />
     <Folder Include="Views\Article\" />
+    <Folder Include="Views\a\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
